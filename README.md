@@ -16,9 +16,11 @@ To get this, please contact info@symanto.net.
 ## Authentication
 
 To authenticate against our API, you need a Bearer Token.
+
 To get the Bearer Token you have to send the following request:
 
 Endpoint: https://staging-account.symanto.net/connect/token
+
 Method: Post
 
 Returns: Object including the Bearer Token ( will be needed to authenticate )
@@ -32,12 +34,13 @@ curl -X POST https://staging-account.symanto.net/connect/token -F client_id={cli
 ## Create Survey Insights Project
 
 Endpoint: https://symanto-configuration-api-staging.azurewebsites.net/surveysolutions/{company-id}/survey-solutions
+
 Method: Post
 
 Returns: Object including Project Id ( will be needed to get the results later )
 
 In this example, please replace {company-id} and {bearer-token}.
-The rest will create an example project with an example file.
+This will create an example project with example data.
 
 ```
 curl -X POST \
@@ -67,6 +70,7 @@ curl -X POST \
 Please have in mind, that it will take some time until you will be able to see the data.
 
 Endpoint: https://symanto-configuration-api-staging.azurewebsites.net/post
+
 Method: Get
 
 Returns a Json Array of Posts ( the processed data )
