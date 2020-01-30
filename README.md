@@ -36,6 +36,8 @@ Endpoint: https://symanto-configuration-api-staging.azurewebsites.net/project/{c
 
 Method: Post
 
+**IMPORTANT: YOU NEED THE RETURNED ID FROM THIS CALL, THAT'S THE {project-id} WHICH YOU NEED FOR THE OTHER CALLS**
+
 Returns:
 
 ```
