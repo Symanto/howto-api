@@ -100,16 +100,16 @@ curl -X POST \
   -d '{
   "data": [
     {
-      "id": "1",
-      "text": "this is a test 1",
+      "id": "some-id-1",
+      "text": "I have a great time in this awesome company.",
       "date": "2020-01-30T14:52:56.780Z",
       "metaData": {
       	"anyfield": "anyvalue", "anyfield1": "anyvalue1"
       }
     },
     {
-      "id": "2",
-      "text": "this is a test 2",
+      "id": "some-id-2",
+      "text": "The best company I ever worked for!",
       "date": "2020-01-30T14:52:56.780Z",
       "metaData": {
       	"anyfield": "anyvalue", "anyfield1": "anyvalue1"
