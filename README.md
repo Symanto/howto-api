@@ -117,42 +117,6 @@ curl -X POST \
 }'
 ```
 
-
-
-## Create Survey Insights Project
-
-Endpoint: https://symanto-configuration-api-staging.azurewebsites.net/surveysolutions/{company-id}/survey-solutions
-
-Method: Post
-
-Returns: Object including Project Id ( will be needed to get the results later )
-
-In this example, please replace {company-id} and {bearer-token}.
-This will create an example project with example data.
-
-```
-curl -X POST \
-  https://symanto-configuration-api-staging.azurewebsites.net/surveysolutions/{company-id}/survey-solutions \
-  -H 'Authorization: Bearer {bearer-token}' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "choosenColumnNames": [
-      "Please describe your experience!"
-    ],
-    "metaDataColumnNames": [
-      "Response ID",
-      "Age"
-    ],
-    "weightColumnName": "Weight",
-    "projectName": "the name of your project, again",
-    "language": "en",
-    "fileUrl": "https://github.com/Symanto/howto-api/raw/master/sample-files/sample-restaurant-reviews.xlsx",
-    "showProfileSection": true,
-    "description": "a description for your project",
-    "type": "SurveySolution"
-  }'
-```
-
 ## Get The Processed Data
 
 Please have in mind, that it will take some time until you will be able to see the data.
