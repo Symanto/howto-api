@@ -92,7 +92,7 @@ This will create an example project with example data.
 
 ```
 curl -X POST \
-  https://symanto-configuration-api-staging.azurewebsites.net/project/{company-id}/add-data \
+  https://symanto-configuration-api-staging.azurewebsites.net/project/{project-id}/add-data \
   -H 'Authorization: Bearer {bearer-token}' \
   -H 'Content-Type: application/json' \
   -d '{
