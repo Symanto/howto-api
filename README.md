@@ -109,7 +109,7 @@ curl -X POST \
     },
     {
       "id": "some-id-2",
-      "text": "The best company I ever worked for!",
+      "text": "The greatest company I ever worked for!",
       "date": "2020-01-30T14:52:56.780Z",
       "metaData": {
       	"anyfield": "anyvalue", "anyfield1": "anyvalue1"
