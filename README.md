@@ -87,7 +87,15 @@ Endpoint: https://symanto-configuration-api-staging.azurewebsites.net/project/{c
 
 Method: Post
 
-Returns: 200 - OK
+Returns: 200 - OK including **transaction-id**
+
+**IMPORTANT: with this transaction-id you can get the status of your transaction**
+
+```
+{
+  "transactionId": "string"
+}
+```
 
 In this example, please replace {project-id} and {bearer-token}.
 This will create an example project with example data.
@@ -119,15 +127,41 @@ curl -X POST \
 }'
 ```
 
+## Get The Status Of My Transaction
+
+Endpoint: https://symanto-configuration-api-dev.azurewebsites.net/project/status?transactionId={transaction-id}
+
+Method: GET
+
+Returns:
+
+Status can be one of: "Finished", "InProgress", "Unknown"
+
+```
+{
+    "progress": 0,
+    "status": "string"
+}
+```
+
+In this example, please replace {transaction-id} and {bearer-token}.
+This will return you the status of your transaction.
+
+```
+curl -X GET \ 
+  'https://symanto-configuration-api-dev.azurewebsites.net/project/status?transactionId={transaction-id}' \
+  -H 'Authorization: Bearer {bearer-token}'
+```
+
 ## Get The Processed Data
 
 Please have in mind, that it will take some time until you will be able to see the data.
 
-Endpoint: https://symanto-configuration-api-staging.azurewebsites.net/project?projectId={project-id}
+Endpoint: https://symanto-configuration-api-staging.azurewebsites.net/project?projectId={project-id}&transactionId={transaction-id}
 
 Method: Get
 
-Returns:
+Returns: 
 
 ```
 {
@@ -261,10 +295,13 @@ Returns:
 }
 ```
 
-In this example, please replace {project-id} and {nr-of-posts-to-return}. 
+In this example, please replace {project-id}, {nr-of-posts-to-return} and {transaction-id}. 
+This call will return you the data related to that transaction. 
+
+TransactionId is **optional**, if not provided it will return all data for that project.
 
 ```
 curl -X GET \
-  'https://symanto-configuration-api-staging.azurewebsites.net/project?projectId={project-id}&take={nr-of-posts-to-return}' \
+  'https://symanto-configuration-api-staging.azurewebsites.net/project?projectId={project-id}&take={nr-of-posts-to-return}&transactionId={transaction-id}' \
   -H 'Authorization: Bearer {bearer-token}'
 ```
