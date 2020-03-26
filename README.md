@@ -7,29 +7,11 @@ If you want access to our services please contact us.
 
 You need:
 
-* client-id
-* client-secret
+* bearer token [How to get the bearer token](https://github.com/Symanto/howto-api/blob/master/authentication.md)
 * company-id
 
-To get this, please contact info@symanto.net.
+For help, please contact info@symanto.net.
 
-## Authentication
-
-To authenticate against our API, you need a Bearer Token.
-
-To get the Bearer Token you have to send the following request:
-
-Endpoint: https://staging-account.symanto.net/connect/token
-
-Method: Post
-
-Returns: Object including the Bearer Token ( will be needed to authenticate )
-
-In this example, please replace {client-id} and {client-secret}.
-
-```
-curl -X POST https://staging-account.symanto.net/connect/token -F client_id={client-id} -F client_secret={client-secret} -F grant_type=client_credentials
-```
 ## Create Survey Insights Project
 
 Endpoint: https://symanto-configuration-api-staging.azurewebsites.net/project/{company-id}
