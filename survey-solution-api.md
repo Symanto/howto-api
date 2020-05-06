@@ -72,7 +72,7 @@ Method: Post
 
 Returns: 200 - OK including **transaction-id**
 
-**CallbackUrl:** will be called after the data is processed, it will be a POST request having the transactionId as a form-urlencoded value in the body
+**CallbackUrl:** will be called after the data is processed, it will be a POST request having the transactionId as form-urlencoded value in the body
 
 **IMPORTANT: with this transaction-id you can get the status of your transaction**
 
