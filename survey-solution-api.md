@@ -66,11 +66,13 @@ curl -X POST \
 
 ## Add Data to your Survey Insights Project
 
-Endpoint: https://{endpoint}/project/{company-id}/add-data
+Endpoint: https://{endpoint}/project/{company-id}/add-data?callbackUrl={callbackUrl}
 
 Method: Post
 
 Returns: 200 - OK including **transaction-id**
+
+**callbackUrl will be called after the data is processed, it will be a POST request having the transactionId in the body**
 
 **IMPORTANT: with this transaction-id you can get the status of your transaction**
 
