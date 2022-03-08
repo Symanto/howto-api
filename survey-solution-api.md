@@ -53,6 +53,20 @@ Returns:
 In this example, please replace {company-id} and {bearer-token}.
 This will create an example project with example data.
 
+You can choose the industry that your data related to in the body of request in industry field.
+if you don't have any idea, automatically we would choose Generic for you.
+Industries that we have are:
+        Generic,
+        Employee ,
+        ECommerce ,
+        Restaurant ,
+        Hotel ,
+        CarDealership,
+        Retail ,
+        Banking ,
+        Pharma ,
+        ConsumerElectronics 
+
 ```
 curl -X POST \
   https://{endpoint}/project/{company-id} \
@@ -60,27 +74,18 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -d '{
     "name": "name of your project",
-    "language": "en"
+    "language": "en",
+    "industry" : "Restaurant"
   }'
 ```
 
 ## Add Data to your Survey Insights Project
 
-Endpoint: https://{endpoint}/project/{company-id}/add-data?callbackUrl={callbackUrl}
+Endpoint: https://{endpoint}/project/{project-id}/add-data
 
 Method: Post
 
-Returns: 200 - OK including **transaction-id**
-
-**CallbackUrl:** will be called after the data is processed, it will be a POST request having the transactionId as form-urlencoded value in the body
-
-**IMPORTANT: with this transaction-id you can get the status of your transaction**
-
-```
-{
-  "transactionId": "string"
-}
-```
+Returns: 200 - OK including **project-id**
 
 In this example, please replace {project-id} and {bearer-token}.
 This will create an example project with example data.
@@ -112,9 +117,9 @@ curl -X POST \
 }'
 ```
 
-## Get The Status Of My Transaction
+## Get The Status Of My Data
 
-Endpoint: https://{endpoint}/project/status?transactionId={transaction-id}
+Endpoint: https://{endpoint}/project/status?projectId={project-id}
 
 Method: GET
 
@@ -134,7 +139,7 @@ This will return you the status of your transaction.
 
 ```
 curl -X GET \ 
-  'https://{endpoint}/project/status?transactionId={transaction-id}' \
+  'https://{endpoint}/project/status?projectId={project-id}' \
   -H 'Authorization: Bearer {bearer-token}'
 ```
 
@@ -142,7 +147,7 @@ curl -X GET \
 
 Please have in mind, that it will take some time until you will be able to see the data.
 
-Endpoint: https://{endpoint}/project?projectId={project-id}&transactionId={transaction-id}
+Endpoint: https://{endpoint}/project?projectId={project-id}
 
 Method: Get
 
@@ -280,13 +285,13 @@ Returns:
 }
 ```
 
-In this example, please replace {project-id}, {nr-of-posts-to-return} and {transaction-id}. 
-This call will return you the data related to that transaction. 
+In this example, please replace {project-id}, and {nr-of-posts-to-return}. 
+This call will return you the data related to that project. 
 
-TransactionId is **optional**, if not provided it will return all data for that project.
+
 
 ```
 curl -X GET \
-  'https://{endpoint}/project?projectId={project-id}&take={nr-of-posts-to-return}&transactionId={transaction-id}' \
+  'https://{endpoint}/project?projectId={project-id}&take={nr-of-posts-to-return}' \
   -H 'Authorization: Bearer {bearer-token}'
 ```
