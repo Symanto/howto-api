@@ -98,7 +98,7 @@ curl -X POST \
   -d '{
   "data": [
     {
-      "id": "some-id-1",
+      "postid": "some-id-1",
       "text": "I have a great time in this awesome company.",
       "date": "2020-01-30T14:52:56.780Z",
       "metaData": {
@@ -106,7 +106,7 @@ curl -X POST \
       }
     },
     {
-      "id": "some-id-2",
+      "postid": "some-id-2",
       "text": "The greatest company I ever worked for!",
       "date": "2020-01-30T14:52:56.780Z",
       "metaData": {
