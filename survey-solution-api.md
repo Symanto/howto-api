@@ -134,7 +134,7 @@ Status can be one of: "Finished", "InProgress", "Unknown"
 }
 ```
 
-In this example, please replace {transaction-id} and {bearer-token}.
+In this example, please replace {project-id} and {bearer-token}.
 This will return you the status of your transaction.
 
 ```
