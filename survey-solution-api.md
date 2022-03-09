@@ -1,4 +1,4 @@
-# How to use the symanto Survey Solution API
+# How to use the Symanto Insight Platform API
 
 We will describe some use cases on how to use our API.
 If you want access to our services please contact us.
@@ -13,7 +13,7 @@ You need:
 
 For help, please contact info@symanto.net
 
-## Create Survey Insights Project
+## Create Project
 
 Endpoint: https://{endpoint}/project/{company-id}
 
@@ -79,7 +79,7 @@ curl -X POST \
   }'
 ```
 
-## Add Data to your Survey Insights Project
+## Add Data to your Project
 
 Endpoint: https://{endpoint}/project/{project-id}/add-data
 
