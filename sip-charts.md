@@ -14,12 +14,12 @@ You need:
 
 Endpoint: https://{endpoint}/charting/{project-id}/topicFeatures
 
-Method: **GET**
+Method: **POST**
 
 Optional Query Parameters:
-
-* **from:** date in the format "YYYY-MM-dd" which will be used to limit the charting data to dates bigger or equal to {from}
-* **to:** date in the format "YYYY-MM-dd" which will be used to limit the charting data to dates smaller than {to}
+ 
+* **metaKey:** breakdown option you want to compare, e.g. brand, product, etc.
+* **metaValues:** select at least two values to define the subsets of data you want to compare against. You can send [multiple values](https://stackoverflow.com/questions/24059773/correct-way-to-pass-multiple-values-for-same-parameter-name-in-get-request) 
 
 Returns:
 
@@ -29,8 +29,8 @@ Returns:
     "key": "string",
     "value": [
       {
-        "category": "string",
         "name": "string",
+        "category": "string",
         "positiveCount": 0,
         "negativeCount": 0,
         "neutralCount": 0,
@@ -57,3 +57,5 @@ Meaning of attributes:
 * **negativePercentage:** the negative percentage of this topic
 * **neutralPercentage:** the neutral percentage of this topic
 * **netSentimentScore:** the net sentiment score of this topic
+
+[Volume Comparison](https://help.symanto.com/knowledge/comparison)
