@@ -58,4 +58,4 @@ Meaning of attributes:
 * **neutralPercentage:** the neutral percentage of this topic
 * **netSentimentScore:** the net sentiment score of this topic
 
-[Volume Comparison](https://help.symanto.com/knowledge/comparison)
+See more about [Volume Comparison](https://help.symanto.com/knowledge/comparison)
