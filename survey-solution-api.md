@@ -292,6 +292,6 @@ This call will return you the data related to that project.
 
 ```
 curl -X GET \
-  'https://{endpoint}/project?projectId={project-id}&take={nr-of-posts-to-return}' \
+  'https://{endpoint}/project?projectId={project-id}&take={nr-of-posts-to-return}&skip={nr-of-posts-to-skip}' \
   -H 'Authorization: Bearer {bearer-token}'
 ```
